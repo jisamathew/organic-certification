@@ -1,0 +1,63 @@
+<!-- home.page.html -->
+<ion-header>
+  <ion-toolbar>
+    <!-- color="warning" -->
+    <ion-title>
+     Organic Farm Certification
+    </ion-title>
+    <ion-buttons fill="solid" slot="end">
+      <ion-button (click)="presentModal()">
+        <!-- <ion-icon slot="icon-only" name="add"> -->
+        <!-- <ion-icon slot="start" name="add">
+           -->
+           <!-- <ion-icon name="enter-outline"></ion-icon> -->
+            <ion-icon name="log-in-outline"></ion-icon>
+        Sign Up
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!--  -->
+
+  <!-- <h5>Ionic Ion Slider with Navigation Arrows</h5> -->
+
+  <ion-slides pager="false" [options]="slideOptions" #slideWithNav
+  (ionSlideDidChange)="SlideDidChange(sliderOne,slideWithNav)">
+  <!-- <ion-slide *ngFor="let s of sliderOne.slidesItems"> -->
+    <ion-slide>
+      <img class="sliderimage" src="../../assets/images/field.jpg">
+    </ion-slide>
+  <ion-slide>
+    <img class="sliderimage"  src="../../assets/images/2.jpg">
+    <!-- Organic Farm Cetification -->
+  </ion-slide>
+
+  <ion-slide>
+    <img class="sliderimage"  src="../../assets/images/3.jpg">
+  </ion-slide>
+</ion-slides>
+
+<!--
+  <ion-grid [fixed]="true">
+    <ion-row>
+      <ion-col size="1">
+        <span class="slider-nav arrow-prev" (click)="slidePrev(sliderOne,slideWithNav)">
+          <div class="prev-icon-custom custon-nav" [class.disabled]="sliderOne.isBeginningSlide"></div>
+        </span>
+      </ion-col>
+      <ion-col size="10">
+
+
+
+      </ion-col>
+      <ion-col size="1">
+        <span class="slider-nav arrow-next" (click)="slideNext(sliderOne,slideWithNav)">
+          <div class="next-icon-custom custon-nav" [class.disabled]="sliderOne.isEndSlide"></div>
+        </span>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+
+</ion-content>

@@ -1,0 +1,130 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button default-href="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Welcome Farmer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <h3>
+     <b>APPLICATION FORM</b>
+    </h3>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>Field Id</ion-label>
+            <ion-input id="farm" disabled></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">1.Name and Address of Organic Producer</ion-label>
+            <ion-input id="farmername" placeholder="Owners Name" required></ion-input>
+            <ion-textarea id="farmeraddress" placeholder="Owners Address" required></ion-textarea>
+
+            <!-- <ion-input placeholder="Address Line 1"></ion-input>
+    <ion-input placeholder="Address Line 2"></ion-input>
+    <ion-input placeholder="City"></ion-input>
+    <ion-input placeholder="State"></ion-input>
+    <ion-input placeholder="Zip Code"></ion-input> -->
+          </ion-item>
+          <ion-item>
+            <ion-label>2.Certification Requirement</ion-label>
+            <ion-select id="requirement" value="Crop">
+              <ion-select-option name="requirement" id="requirement1" value="Crop">Crop Production</ion-select-option>
+              <ion-select-option name="requirement" id="requirement2" value="Honey">Honey</ion-select-option>
+              <ion-select-option name="requirement" id="requirement3" value="Wild Collection">Wild Collection</ion-select-option>
+              <ion-select-option name="requirement" id="requirement4" value="Dairy">Dairy and other livestock</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>3.Certification Requirement under which Standard ?</ion-label>
+            <ion-select id="standard" value="NPOP">
+              <ion-select-option name="standard" id="standard1" value="NPOP">NPOP</ion-select-option>
+              <ion-select-option name="standard" id="standard2" value="NOP">NOP</ion-select-option>
+              <ion-select-option name="standard" id="standard3" value="JAS">JAS</ion-select-option>
+              <ion-select-option name="standard" id="standard4" value="EO">EO</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">4.Cropping System followed</ion-label>
+            <ion-input id="crop" placeholder="(i) Name of the Crop" required></ion-input>
+            <ion-textarea id="extent" placeholder="(ii) Extent of each crop grown" required></ion-textarea>
+
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">5.Input applied to previous crops</ion-label>
+            <ion-input id="previouscrop" required></ion-input>
+          </ion-item>
+
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label position="floating">6.Plant Protection measures followed</ion-label>
+              <ion-input id="protect" required></ion-input>
+            </ion-item>
+          <ion-item>
+            <ion-label position="floating">7.Source of manure</ion-label>
+            <ion-input id="manure" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">8.Source of seed</ion-label>
+            <ion-input id="seed" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">9.Soil Type</ion-label>
+            <ion-input id="soiltype" required></ion-input>
+          </ion-item>
+          <div id="latlong">
+            <ion-item >
+              <ion-label position="floating">10.Location of the farm</ion-label>
+              <ion-input id="latit" placeholder="Latitude of Place where farm located" required>
+              </ion-input>
+              <ion-input id="longit" placeholder="Longitude of Place where farm located" required></ion-input>
+
+            </ion-item>
+            <ion-item>
+              <ion-icon id="addMore" name="add" placeholder="Add field edges" (click)="addMoreEdges()">Add More Edges</ion-icon>
+
+              <ion-button id="saveArray" slot="end" (click)="saveArray()" >Save Location</ion-button>
+
+            </ion-item>
+          </div>
+
+
+
+
+ <ion-list id="declaration" style="display:none">
+      <ion-item>
+        <ion-label>DECLARATION</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-checkbox color="dark" checked slot="start"></ion-checkbox>
+        <ion-label>I declare that I shall abide by the rules and regulations</ion-label>
+      </ion-item>
+      <ion-button expand="block" (click)="submitApplication()">Apply</ion-button>
+
+    </ion-list>
+
+
+
+        </ion-col>
+
+      </ion-row>
+      <ion-row>
+<ion-col>
+  <ion-card class="map-responsive" style="width: auto; height:400px;display:none;" id="mapContainer">
+  </ion-card>
+
+</ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!-- Checkboxes in a List -->
+
+  </ion-card>
+</ion-content>

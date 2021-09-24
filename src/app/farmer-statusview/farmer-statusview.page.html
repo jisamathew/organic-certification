@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button default-href="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Status of Application</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<!-- Searchbar with value -->
+<ion-searchbar id="farmid" placeholder="Enter FieldID"></ion-searchbar>
+<ion-button (click)="searchField()">Search</ion-button>
+<ion-card>
+  <div id="chart"></div>
+</ion-card>
+</ion-content>

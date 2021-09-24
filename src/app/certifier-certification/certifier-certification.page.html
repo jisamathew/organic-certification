@@ -1,0 +1,361 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button default-href="home"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Welcome Certifier</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div id="viewApp" style="display:none;">
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Farmer</th>
+          <th scope="col">Address</th>
+          <th scope="col">Latitude</th>
+          <th scope="col">Longitude</th>
+          <th scope="col">Requirement</th>
+          <th scope="col">Standard</th>
+          <th scope="col">Account</th>
+        </tr>
+      </thead>
+      <tbody id="candidatesResults">
+      </tbody>
+    </table>
+  </div>
+  <ion-card  id="SingleApplication1" class="row" style="display:none;">
+    <ion-card-header>
+      <h1>CERTIFICATION</h1>
+      </ion-card-header>
+    <ion-grid>
+<ion-row>
+  <ion-col>
+
+    <ion-item >
+      <ion-label>
+        Application id
+      </ion-label>
+      <ion-label id="fieldid" >
+      </ion-label>
+    </ion-item>
+    <ion-item >
+      <ion-label>
+        Field Owner
+      </ion-label>
+      <ion-label id="owner" >
+      </ion-label>
+    </ion-item>
+    <ion-item >
+      <ion-label>
+        Address
+      </ion-label>
+      <ion-label id="addr" >
+      </ion-label>
+    </ion-item>
+    <ion-item >
+      <ion-label>
+        Requirement
+      </ion-label>
+      <ion-label id="production" >
+      </ion-label>
+    </ion-item>
+
+  <ion-item >
+    <ion-label>
+      Standard
+    </ion-label>
+    <ion-label id="std" >
+    </ion-label>
+  </ion-item>
+  <ion-item >
+    <ion-label>
+      Cropping System followed
+    </ion-label>
+
+  </ion-item>
+  <ion-item >
+    <ion-label>
+      (i) Name of the Crop
+    </ion-label>
+    <ion-label id="crop" >
+    </ion-label>
+  </ion-item>
+  <ion-item >
+    <ion-label>
+      (ii) Extent of each crop grown
+    </ion-label>
+    <ion-label id="extent" >
+    </ion-label>
+  </ion-item>
+  <ion-item >
+    <ion-label>
+      Input applied to previous crops
+    </ion-label>
+    <ion-label id="precrop" >
+    </ion-label>
+  </ion-item>
+  <ion-item >
+    <ion-label>
+      Plant Protection measures followed
+    </ion-label>
+    <ion-label id="protect" >
+    </ion-label>
+  </ion-item>
+  <ion-item >
+    <ion-label>
+      Source of manure
+    </ion-label>
+    <ion-label id="manure" >
+    </ion-label>
+  </ion-item>
+  <ion-item >
+    <ion-label>
+      Source of seed
+
+    </ion-label>
+    <ion-label id="seed" >
+    </ion-label>
+  </ion-item>
+  <ion-item >
+    <ion-label>
+      Soil Type
+    </ion-label>
+    <ion-label id="soil1" >
+    </ion-label>
+  </ion-item>
+  </ion-col>
+  <ion-col>
+
+  <ion-item >
+
+    <ion-label>
+      Status
+    </ion-label>
+    <ion-label id="stat1" >
+    </ion-label>
+  </ion-item>
+  <ion-card>
+    <div style="width:auto; height: 500px;"  id="mapFrame"></div>
+    </ion-card>
+
+</ion-col>
+
+</ion-row>
+<ion-row id="InspectionDiv">
+  <ion-col>
+    <h2>Inspection Details</h2>
+    <ion-item >
+      <ion-label>
+        Tentative Date of Inspection:
+      </ion-label>
+      <ion-label id="idate2">
+      </ion-label>
+        </ion-item>
+        <ion-item >
+          <ion-label>
+            Inspector Name
+          </ion-label>
+          <ion-label  id="iname2">
+          </ion-label>
+  </ion-item>
+  </ion-col>
+
+</ion-row>
+<ion-row>
+  <ion-col>
+      <ion-card id="Certify" style="display:none;">
+    <h2>Certification Details</h2>
+
+      <ion-item>
+        <ion-label position="floating">Certified By</ion-label>
+        <ion-input id="cname"></ion-input>
+
+      </ion-item>
+
+
+      <ion-item>
+  <ion-label position="floating">Validity</ion-label>
+
+        <ion-label>Year</ion-label>
+        <ion-select id="fromyr" value="2021" disabled>
+          <ion-select-option value="2021">2021</ion-select-option>
+          <!-- <ion-select-option value="2022">1990</ion-select-option>
+            <ion-select-option value="202">1991</ion-select-option>
+            <ion-select-option value="1992">1992</ion-select-option>
+            <ion-select-option value="1993">1993</ion-select-option>
+            <ion-select-option value="1994">1994</ion-select-option>
+            <ion-select-option value="1995">1995</ion-select-option>
+            <ion-select-option value="1996">1996</ion-select-option>
+            <ion-select-option value="1997">1997</ion-select-option>
+            <ion-select-option value="1998">1998</ion-select-option>
+            <ion-select-option value="1999">1999</ion-select-option> -->
+        </ion-select>
+        <!-- <ion-datetime
+          #fromyr
+          placeholder="Choose Year"
+          displayFormat="YYYY"
+          min="2021"
+          max="2035"
+          [(ngModel)]="selYear">
+          </ion-datetime> -->
+
+
+        <ion-select id="toyr" value="2022">
+          <ion-select-option value="2022">2022</ion-select-option>
+          <ion-select-option value="2023">2023</ion-select-option>
+          <ion-select-option value="2024">2024</ion-select-option>
+          <ion-select-option value="2025">2025</ion-select-option>
+          <ion-select-option value="2026">2026</ion-select-option>
+          <ion-select-option value="2027">2027</ion-select-option>
+          <ion-select-option value="2028">2028</ion-select-option>
+          <ion-select-option value="2029">2029</ion-select-option>
+          <ion-select-option value="2030">2030</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <!-- <select type="dropdown" id="fromyr" disabled></select> -
+        <select type="dropdown" id="toyr"></select> -->
+      <!--
+  <br><br><label for="receiver">Certified By:</label><input type="text" id="authority" disabled></input>-->
+      <ion-item>
+        <ion-button slot="end" id="send" (click)="certifyFarm()">CERTIFY</ion-button>
+
+      </ion-item>
+      <!--<div id="content" style="display: none;">
+        <p>
+          <img id="qrcode" src="" />
+        </p>
+      </div>-->
+  </ion-card>
+</ion-col>
+
+</ion-row>
+</ion-grid>
+    </ion-card>
+
+
+  <ion-card id="FinalCertificate" style="display:none;">
+
+    <ion-card-header >
+      <ion-card-title style="text-align: center;">CERTIFICATE</ion-card-title>
+      </ion-card-header>
+<ion-grid>
+  <ion-row>
+    <ion-col >
+      This is to certify that the field is Organic
+    </ion-col>
+    <ion-col>
+        <img id="logo" src="" style="float:right;" height="80" width="80">
+
+    </ion-col>
+  </ion-row>
+  <!-- <ion-row>
+    <ion-col>
+  <h3>FARM DETAILS</h3>
+
+    </ion-col>
+    </ion-row> -->
+  <ion-row>
+
+<ion-col>
+
+<ion-item>
+  <ion-label> Field_id </ion-label>
+  <ion-label id="farm"></ion-label>
+</ion-item>
+<ion-item>
+  <ion-label type="stacked"> Ownership </ion-label>
+  <ion-label id="owns"></ion-label>
+  <ion-label id="add"></ion-label>
+
+</ion-item>
+
+<ion-item>
+  <ion-label> Seed Source </ion-label>
+  <ion-label  id="seedsource"></ion-label>
+</ion-item>
+
+</ion-col>
+<ion-col>
+
+  <ion-item>
+    <ion-label>  Certification for </ion-label>
+    <ion-label  id="re"></ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label> Soil type</ion-label>
+    <ion-label  id="soiltype2"></ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label> Certification Standard</ion-label>
+    <ion-label  id="stnd"></ion-label>
+  </ion-item>
+
+</ion-col>
+
+  </ion-row>
+<ion-row>
+  <ion-col>
+    <ion-card style="width:auto; height: 200px;" id="mapSh" ></ion-card>
+    </ion-col>
+  </ion-row>
+<ion-row>
+  <!-- <ion-col>
+    <h3>INSPECTION DETAILS</h3>
+  </ion-col> -->
+  <ion-col>
+
+    <ion-item>
+      <ion-label> Inspected By</ion-label>
+      <ion-label  id="iby"></ion-label>
+    </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+
+        <ion-label> Date of Inspection</ion-label>
+        <ion-label  id="ida"></ion-label>
+      </ion-item>
+    </ion-col>
+
+</ion-row>
+<ion-row>
+  <ion-col>
+<ion-item>
+  <ion-label> Validity</ion-label>
+  <ion-label  id="cval"></ion-label>
+</ion-item>
+  </ion-col>
+  </ion-row>
+  <ion-row>
+  <ion-col>
+<ion-item>
+  <ion-label > Certifying Authority</ion-label>
+  <ion-label  id="cby"></ion-label>
+</ion-item>
+
+
+  </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col></ion-col>
+  <ion-col>
+    <div id="contentqr" style="display: none;">
+      <img id="qr" src="" style="float:right;">
+      </div>
+  </ion-col>
+
+</ion-row>
+
+    </ion-grid>
+  </ion-card>
+
+
+</ion-content>
+<!--
+
+
+-->

@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>User Registration</ion-title>
+    <ion-buttons slot="end">
+<ion-button (click)="dismissModal()">
+  <ion-icon slot="icon-only" name="close">
+    </ion-icon>
+</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding=''>
+  <ion-card>
+    <div class="center">
+      <!-- <img src="assets/images/logo.png" style="height:42px;" class="smallLogo"/> -->
+      <h1></h1>
+        <ion-avatar>
+          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+        </ion-avatar>
+        <br>
+        <!-- <h3>User Registration</h3> -->
+
+    </div>
+<div class="center">
+  <a href="">Add Photo</a>
+
+</div>
+
+    <form>
+
+      <ion-list>
+
+        <ion-item>
+          <ion-label >UserName</ion-label>
+          <ion-input autocomplete="off" name="name" id="name" type="text" ></ion-input>
+        </ion-item>
+          <!-- <ion-item>
+              <ion-label >Name</ion-label>
+              <ion-input autocomplete="off" name="name" id="name" type="text" [(ngModel)]="postData.name" (change)="setName($event)"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label >Company</ion-label>
+              <ion-input autocomplete="off" name="company" id="company" type="text" [(ngModel)]="postData.company" (change)="setCompany($event)"></ion-input>
+            </ion-item>
+        <ion-item>
+          <ion-label >USID</ion-label>
+          <ion-input autocomplete="off" name="usid" id="usid" type="text" [(ngModel)]="postData.usid" (change)="setUserId($event)"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label >Password</ion-label>
+          <ion-input autocomplete="off" name="pass" id="pass" type="text" [(ngModel)]="postData.pass" (change)="setPass($event)"></ion-input>
+        </ion-item> -->
+        <ion-item>
+
+          <ion-label>Choose User Type</ion-label>
+          <ion-select id="urole" value="farmer" ok-text="Okay" cancel-text="Dismiss">
+            <ion-select-option value="farmer">Farmer</ion-select-option>
+            <ion-select-option value="inspector">Inspector</ion-select-option>
+            <ion-select-option value="certifier">Certifier</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label >Wallet Address</ion-label>
+          <ion-input name="walletAddress" id="walletAddress" type="text" [(ngModel)]="postData.walletAddress" disabled></ion-input>
+        </ion-item>
+
+        <!-- <ion-item>
+          <ion-label >ID Proof</ion-label>
+          <ion-input autocomplete="off" name="idproof"  id="idproof" (change)="encodeImageFileAsURL($event)" type="file" [(ngModel)]="postData.username"></ion-input>
+        </ion-item> -->
+       <br>
+
+        <ion-item lines='none'>
+
+          Already have an account? <a routerLink='/'>Sign in.</a>
+        </ion-item>
+      </ion-list>
+      <ion-button expand="block" share="round" color="warning" (click)="signup()">Registration</ion-button>
+    </form>
+  </ion-card>
+
+</ion-content>

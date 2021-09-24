@@ -1,0 +1,8 @@
+{
+  "name": "organic-certification",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

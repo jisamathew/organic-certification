@@ -1,0 +1,42 @@
+<ion-header >
+  <ion-toolbar color="dark">
+    <!-- <ion-icon name="arrow-back-outline" slot="start" ></ion-icon> -->
+    <ion-buttons slot="start">
+      <ion-back-button default-href="home"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Welcome Farmer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-card class="center">
+
+  <ion-grid >
+    <ion-row class="header-row" style="background-color:aliceblue;">
+      <ion-col >
+        Farm_ID
+      </ion-col>
+      <ion-col >Name</ion-col>
+      <ion-col >Address</ion-col>
+      <!-- <ion-col > Location</ion-col>-->
+        <ion-col >Requirement</ion-col>
+          <ion-col >Standard</ion-col>
+            <ion-col >Status</ion-col>
+    </ion-row>
+    <ion-row *ngFor = "let data1 of tablevaleany" class="data-row">
+      <ion-col >{{ data1.farm_id}}</ion-col>
+      <ion-col >{{ data1.farm_owner}}</ion-col>
+  <ion-col >{{data1.address}}</ion-col>
+      <!-- <ion-col >{{data1.farmloc}}</ion-col>-->
+      <ion-col >{{data1.requirement}}</ion-col>
+      <ion-col >{{data1.standard}}</ion-col>
+      <ion-col >{{data1.stat}}</ion-col>
+      <!-- *ngIf="{{data1.stat}} == 'Certified'" -->
+    <!-- <ion-col> <ion-button>PRINT</ion-button></ion-col> -->
+    </ion-row>
+
+  </ion-grid>
+</ion-card>
+
+</ion-content>

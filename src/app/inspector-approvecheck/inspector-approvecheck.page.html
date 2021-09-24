@@ -1,0 +1,151 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>inspector-approvecheck</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-card>
+  <ion-card-header>
+    INSPECTION
+    </ion-card-header>
+  <ion-item >
+    <ion-label>
+      Application id
+    </ion-label>
+    <ion-label id="fieldid" >
+    </ion-label>
+  </ion-item>
+  <ion-item >
+    <ion-label>
+      Field Owner
+    </ion-label>
+    <ion-label id="owner" >
+    </ion-label>
+  </ion-item>
+
+  <ion-item >
+    <ion-label>
+      Address
+    </ion-label>
+    <ion-label id="addr" >
+    </ion-label>
+  </ion-item>
+
+  <ion-item >
+    <ion-label>
+      Requirement
+    </ion-label>
+    <ion-label id="production" >
+    </ion-label>
+  </ion-item>
+  <ion-item >
+    <ion-label>
+      Standard
+    </ion-label>
+    <ion-label id="std" >
+    </ion-label>
+  </ion-item>
+  <ion-item >
+    <ion-label>
+      Status
+    </ion-label>
+    <ion-label id="stat1" >
+    </ion-label>
+  </ion-item>
+  <ion-item >
+    <ion-label>
+      Cropping System followed
+    </ion-label>
+
+  </ion-item>
+  <ion-item >
+    <ion-label>
+      (i) Name of the Crop
+    </ion-label>
+    <ion-label id="crop" >
+    </ion-label>
+  </ion-item>
+  <ion-item >
+    <ion-label>
+      (ii) Extent of each crop grown
+    </ion-label>
+    <ion-label id="extent" >
+    </ion-label>
+  </ion-item>
+  <ion-item >
+    <ion-label>
+      Input applied to previous crops
+    </ion-label>
+    <ion-label id="precrop" >
+    </ion-label>
+  </ion-item>
+  <ion-item >
+    <ion-label>
+      Plant Protection measures followed
+    </ion-label>
+    <ion-label id="protect" >
+    </ion-label>
+  </ion-item>
+  <ion-item >
+    <ion-label>
+      Source of manure
+    </ion-label>
+    <ion-label id="manure" >
+    </ion-label>
+  </ion-item>
+  <ion-item >
+    <ion-label>
+      Source of seed
+
+    </ion-label>
+    <ion-label id="seed" >
+    </ion-label>
+  </ion-item>
+  <ion-item >
+    <ion-label>
+      Soil Type
+    </ion-label>
+    <ion-label id="soil" >
+    </ion-label>
+  </ion-item>
+</ion-card>
+<ion-card>
+  <div style="width:auto; height:200px;"  id="mapFrame"></div>
+  </ion-card>
+  <ion-card id="addinspect" style="display:none;">
+    <ion-item >
+      <ion-label>
+        Tentative Date of Inspection:
+      </ion-label>
+    <ion-input type="date" id="idate" required></ion-input>
+</ion-item>
+
+<ion-item >
+  <ion-label>
+    Inspector Name
+  </ion-label>
+  <ion-input type="text" id="iname" required></ion-input>
+  </ion-item>
+
+    <ion-button id="send" (click)="InspectDetails()">ACCEPT</ion-button>
+
+</ion-card>
+  <ion-card id="inspect" style="display:none;">
+      <ion-item >
+        <ion-label>
+          Tentative Date of Inspection:
+        </ion-label>
+
+        <ion-input type="text" id="idate3" disabled></ion-input>
+          </ion-item>
+          <ion-item >
+            <ion-label>
+              Inspector Name
+            </ion-label>
+          <ion-input type="text" id="iname3" disabled></ion-input>
+</ion-item>
+  </ion-card>
+
+</ion-content>
